@@ -6,6 +6,7 @@
 package dashbaord;
 
 import admin.admin_dashb;
+import config.Session;
 import config.connectDB;
 import enrollment.enroll_table;
 import grade.grade_dashb;
@@ -360,7 +361,9 @@ public class dashb extends javax.swing.JFrame {
             JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
         if (choice == JOptionPane.YES_OPTION) {
-
+           connectDB db = new connectDB();
+           Session sess = Session.getInstance();
+           db.logActivity(sess.getId(), "User Logout: " + sess.getId());
            welcomepage si = new welcomepage();
             si.setVisible(true);
             this.dispose();

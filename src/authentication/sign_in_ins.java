@@ -298,8 +298,9 @@ try {
         if (!status1.equals("Active")) {
             JOptionPane.showMessageDialog(null, "Pending Account, Please wait for approval");
         } else if (type1.equals("Admin")) {
+            Session sess = Session.getInstance();
+            db.logActivity(sess.getId(), "User Login: " + uname.getText());
             JOptionPane.showMessageDialog(null, "Login successful!");
-         
             dashb ad = new dashb();
             ad.setVisible(true);
             this.dispose();

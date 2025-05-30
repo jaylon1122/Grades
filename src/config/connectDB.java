@@ -94,7 +94,7 @@ public class connectDB {
         
         public ResultSet getLogs() throws SQLException {
             String query = "SELECT l.log_id AS 'Log ID', " +
-                           "u.u_username AS 'Username', " +
+                           "u.username AS 'Username', " +
                            "l.log_action AS 'Action', " +
                            "l.log_timestamp AS 'Timestamp' " +
                            "FROM tbl_logs l " +
